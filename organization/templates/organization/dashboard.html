@@ -1,0 +1,124 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<!-- Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  body {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  .dashboard-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    padding: 30px 40px;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: 700;
+    color: #ff6f91;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  p.welcome {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+  }
+
+  .user-info {
+    background: #ffe6e8;
+    border-radius: 12px;
+    padding: 25px 30px;
+    box-shadow: inset 0 0 15px #ffb6c1;
+  }
+
+  .user-info h2 {
+    color: #d6336c;
+    margin-bottom: 15px;
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  .user-info ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .user-info ul li {
+    font-size: 17px;
+    padding: 8px 0;
+    border-bottom: 1px solid #ffb6c1;
+    color: #6a1b4d;
+  }
+
+  .user-info ul li:last-child {
+    border-bottom: none;
+  }
+
+  .logout-btn {
+    display: block;
+    margin: 30px auto 0 auto;
+    background: #ff6f91;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: 150px;
+    transition: background 0.3s ease;
+  }
+
+  .logout-btn:hover {
+    background: #d6336c;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px 0;
+    color: #aa5a6a;
+    margin-top: 40px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+  }
+</style>
+
+<div class="dashboard-container">
+  <h1>Welcome, {{ user.username }}!</h1>
+  <p class="welcome">This is your personalized dashboard.</p>
+  
+  <div class="user-info">
+    <h2>User Information:</h2>
+    <ul>
+      <li><strong>Username:</strong> {{ user.username }}</li>
+      <li><strong>Email:</strong> {{ user.email }}</li>
+      <li><strong>Organization:</strong> 
+        {% if user.organization %}
+          {{ user.organization.name }}
+        {% else %}
+          No organization assigned
+        {% endif %}
+      </li>
+    </ul>
+  </div>
+  
+  <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+</div>
+
+<footer>© 2025 Multi-Organization Management</footer>
+{% endblock %}

@@ -1,0 +1,32 @@
+
+
+2 changes in urls/orgization 
+
+3   change in views at dashboard
+
+
+4           ##  dashboard.html previous code## 
+ <!-- users/templates/users/dashboard.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>Welcome, {{ user.username }}!</h1>
+  <p>This is your personalized dashboard.</p>
+
+  <!-- Display User Information -->
+  <h3>User Information:</h3>
+  <ul>
+    <li>Username: {{ user.username }}</li>
+    <li>Email: {{ user.email }}</li>
+    <li>Organization: {{ user.organization.name if user.organization else 'No organization assigned' }}</li>
+  </ul>
+
+  <!-- Add more dashboard content here, like statistics, user data, etc. -->
+
+  <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}
+
+
+
+5.  ###  user_list file   old  ### 
+<!-- <h1>Users</h1><a href="{% url 'user_create' %}">Create User</a><ul>{% for user in users %}<li>{{ user.username }} - {{ user.role.name if user.role else "No Role" }}<a href="{% url 'assign_role' user.id %}">Assign Role</a></li>{% endfor %}</ul> -->

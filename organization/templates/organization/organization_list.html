@@ -1,0 +1,23 @@
+ 
+
+ {% extends "base_generic.html" %}
+
+{% block title %}Organizations{% endblock %}
+
+{% block content %}
+<h1>Organizations</h1>
+<a href="{% url 'organization_create' %}">Create Organization</a>
+<ul>
+  {% for org in organizations %}
+    <li>{{ org.name }}</li>
+  {% empty %}
+    <li>No organizations found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
+
+
+
+
+
+ <!--<h1>Organizations</h1><a href="{% url 'organization_create' %}">Create Organization</a><ul>{% for org in organizations %}<li>{{ org.name }}</li>{% endfor %}</ul>  -->

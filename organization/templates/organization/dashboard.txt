@@ -1,0 +1,29 @@
+<!-- users/templates/users/dashboard.html -->
+ {% extends 'base_generic.html' %}
+  
+ {% block title %}Dashboard{% endblock %}
+ {% block content %}
+   <h1>Welcome, {{ user.username }}!</h1>
+   <p>This is your personalized dashboard.</p>
+ 
+   <!-- Display User Information -->
+   <h3>User Information:</h3>
+   
+   <ul>
+    <li>Username: {{ user.username }}</li>
+    <li>Email: {{ user.email }}</li>
+    <li>
+      Organization:
+      {% if user.organization %}
+        {{ user.organization.name }}
+      {% else %}
+        No organization assigned
+      {% endif %}
+    </li>
+  </ul>
+  
+ 
+   <!-- Add more dashboard content here, like statistics, user data, etc. -->
+ 
+   <a href="{% url 'logout' %}">Logout</a>
+ {% endblock %}

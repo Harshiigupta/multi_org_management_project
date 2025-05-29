@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Multi Orgnization system</title>
+    <!--<link rel="stylesheet" href="{% static 'styles.css' %}"> --> <!-- Link to a static CSS file if needed -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Home</a></li>
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>  <!-- Link to Django Admin -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Welcome our Orgnization</h1>
+        <p>This is the homepage of your Django project. You can customize this template to fit your needs!</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Django Project</p>
+    </footer>
+</body>
+</html>
