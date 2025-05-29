@@ -39,6 +39,8 @@ Flask-Migrate==4.0.7
 Flask-SQLAlchemy==2.5.1
 flatbuffers==25.2.10
 fonttools==4.56.0
+gunicorn
+
 gast==0.6.0
 google-api-core==2.19.0
 google-auth==2.29.0
