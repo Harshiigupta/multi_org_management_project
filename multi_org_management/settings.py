@@ -9,7 +9,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'your-secret-key-here'
 # SECURITY WARNING: Don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost',
+    '127.0.0.1',
+    'multi-org-management-project.onrender.com',]
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
